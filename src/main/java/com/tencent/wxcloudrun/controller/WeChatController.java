@@ -1,18 +1,18 @@
 package com.tencent.wxcloudrun.controller;
 
-import com.sun.tools.javac.util.List;
+
 import com.tencent.wxcloudrun.dto.DeepSeekRequest;
 import com.tencent.wxcloudrun.dto.DeepSeekResponse;
 import com.tencent.wxcloudrun.dto.WeChatResponse;
 import com.tencent.wxcloudrun.model.WeChatMessage;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.client.RestTemplate;
+
 import java.security.MessageDigest;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Collections;
 
 @RestController
 @RequestMapping("/wechat")
@@ -58,7 +58,7 @@ public class WeChatController {
 
         DeepSeekRequest deepSeekRequest = new DeepSeekRequest();
         deepSeekRequest.setModel("deepseek-chat"); // 设置模型名称
-        deepSeekRequest.setMessages(List.of(userMessage)); // 设置消息列表;
+        deepSeekRequest.setMessages(Collections.singletonList(userMessage)); // 设置消息列表;
         System.out.println(deepSeekRequest);
 
         // 封装请求体和请求头
