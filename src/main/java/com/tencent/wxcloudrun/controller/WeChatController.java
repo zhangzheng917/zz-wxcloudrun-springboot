@@ -42,7 +42,8 @@ public class WeChatController {
     public ResponseEntity<String> handleMessage(@RequestBody WeChatMessage message) {
         // 创建 RestTemplate 实例
         RestTemplate restTemplate = new RestTemplate();
-//        System.out.println(message);
+        System.out.println(message);
+        System.out.println(deepseekApiKey);
 
         // 设置请求头
         // 设置请求头
@@ -58,7 +59,7 @@ public class WeChatController {
         DeepSeekRequest deepSeekRequest = new DeepSeekRequest();
         deepSeekRequest.setModel("deepseek-chat"); // 设置模型名称
         deepSeekRequest.setMessages(List.of(userMessage)); // 设置消息列表;
-//        System.out.println(deepSeekRequest);
+        System.out.println(deepSeekRequest);
 
         // 封装请求体和请求头
         HttpEntity<DeepSeekRequest> requestEntity = new HttpEntity<>(deepSeekRequest, headers);
