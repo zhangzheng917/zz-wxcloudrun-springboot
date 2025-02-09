@@ -22,7 +22,7 @@ public class WeChatController {
     @Value("${deepseek.api.key}")
     private String deepseekApiKey;
 
-    private final String DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat";
+    private final String DEEPSEEK_API_URL = "https://api.deepseek.com/chat/completions";
 
     @GetMapping
     public String validate(@RequestParam("signature") String signature,
