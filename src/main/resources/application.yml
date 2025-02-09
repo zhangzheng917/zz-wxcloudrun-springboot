@@ -18,6 +18,4 @@ mybatis:
 
 wechat:
   token: your_wechat_token
-deepseek:
-  api:
-    key: sk-39ecd4a24c1447f58c465d42860040d6
+deepseek.api.key: sk-39ecd4a24c1447f58c465d42860040d6
